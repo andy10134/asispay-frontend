@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: Ubuntu;
+  font-weight: 400;
+  src:
+    url(./fonts/Ubuntu/Ubuntu-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: Ubuntu;
+  font-weight: 100;
+  src:
+    url(./fonts/Ubuntu/Ubuntu-Light.ttf) format("truetype");
+
+}
+
+@font-face {
+  font-family: Ubuntu;
+  font-weight: 500;
+  src:
+  url(./fonts/Ubuntu/Ubuntu-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: Ubuntu;
+  font-weight: 600;
+  src:
+  url(./fonts/Ubuntu/Ubuntu-Bold.ttf) format("truetype");
+}
+
+
+@font-face {
+  font-family: NotoSans;
+  font-weight: 400;
+  src:
+    url(./fonts/Noto_Sans/NotoSans-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: NotoSans;
+  font-weight: 100;
+  src:
+    url(./fonts/Noto_Sans/NotoSans-Thin.ttf) format("truetype");
+
+}
+
+@font-face {
+  font-family: NotoSans;
+  font-weight: 500;
+  src:
+  url(./fonts/Noto_Sans/NotoSans-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: NotoSans;
+  font-weight: 600;
+  src:
+  url(./fonts/Noto_Sans/NotoSans-Bold.ttf) format("truetype");
+}
