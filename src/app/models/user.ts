@@ -3,8 +3,7 @@ export class User {
   accountId?: string;
   email?: string;
   password?: string;
-  confirmed?: boolean;
-  tfa?: boolean;
+  passwordConfirm?: string;
   firstname?: string;
   lastname?: string;
 }

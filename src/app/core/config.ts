@@ -7,7 +7,7 @@ interface Config {
 export const config: Config = {
   apiUrl: "http://localhost:8080/api",
   adminUrl: "http://localhost:8080/api/admin",
-  authUrl: "http://localhost:8000/auth",
+  authUrl: "http://localhost:3000/auth",
   auth: "token",
 };
 

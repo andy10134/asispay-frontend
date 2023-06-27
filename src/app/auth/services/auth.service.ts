@@ -16,7 +16,7 @@ export class AuthService {
 
   public readonly LOGIN_PATH = '/login';
   public readonly CONFIRM_PATH = '/';
-  public readonly INITIAL_PATH = '/dashboard';
+  public readonly INITIAL_PATH = 'app/dashboard';
 
   constructor(
     private router: Router,
@@ -43,7 +43,7 @@ export class AuthService {
   }
 
   isLoggedIn$(): Observable<boolean> {
-    console.log(this.auth.getCurrentUser());
+
     return this.auth.getCurrentUser().pipe(
       map(user => !!user),
       catchError(() => of(false))

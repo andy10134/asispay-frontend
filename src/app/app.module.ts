@@ -13,12 +13,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
-import { LoginComponent } from './pages/login/login.component';
-import { SignupComponent } from './pages/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { LoginFormComponent } from './components/auth/login-form/login-form.component';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { AuthModule } from './auth/auth.module';
 import { DashboardModule } from './dashboard/dashboard.module';
@@ -27,10 +24,7 @@ registerLocaleData(es);
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginComponent,
-    LoginFormComponent,
-    SignupComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

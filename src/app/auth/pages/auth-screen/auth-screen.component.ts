@@ -21,9 +21,9 @@ import { RouterOutlet } from '@angular/router';
     ])
   ]
 })
+
 export class AuthScreenComponent {
   prepareRoute(outlet: RouterOutlet){
-    if(outlet.isActivated) return outlet.activatedRoute.snapshot.url;
-    return null;
+    return outlet && outlet.activatedRouteData
   }
 }

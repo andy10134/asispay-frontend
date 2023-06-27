@@ -22,8 +22,8 @@ export class LoginFormComponent {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      email: ['', Validators.email],
-      password: ['']
+      email: ['', [Validators.email, Validators.required]],
+      password: ['', [Validators.minLength(8), Validators.required]]
     });
   }
 
@@ -43,7 +43,7 @@ export class LoginFormComponent {
       this.authService.login(loginRequest)
         .subscribe({
           next: (user) => {
-            this.router.navigate([this.authService.INITIAL_PATH])
+            this.router.navigate([this.authService.INITIAL_PATH]);
           },
           error: (e) => {
             this.message = e.error.message;

@@ -1,1 +1,64 @@
-<p>dashboard-layout works!</p>
+<nz-layout class="h-screen w-screen font-NotoSans">
+  <nz-layout>
+    <nz-sider nzWidth="18rem"  class="fixed h-screen drop-shadow-xl nav-header">
+      <div class="flex justify-center items-center gap-5 py-2 nav-header mt-14 mb-5 ">
+        <img src="/assets/logo.png" class="h-14 w-fit" alt="" srcset="">
+        <span class="font-bold font-ubuntu text-3xl">AsisPay</span>
+      </div>
+      <div class="flex flex-col justify-between">
+      <div class="h-fit">
+        <ul nz-menu nzMode="inline" class="sider-menu flex flex-col">
+          <div class="">
+            <li nz-submenu nzTitle="subnav 2" nzIcon="laptop">
+              <ul>
+                <li nz-menu-item>option5</li>
+                <li nz-menu-item>option6</li>
+                <li nz-menu-item>option7</li>
+                <li nz-menu-item>option8</li>
+              </ul>
+            </li>
+            <li nz-submenu nzTitle="subnav 3" nzIcon="notification">
+              <ul>
+                <li nz-menu-item>option9</li>
+                <li nz-menu-item>option10</li>
+                <li nz-menu-item>option11</li>
+                <li nz-menu-item>option12</li>
+              </ul>
+            </li>
+          </div>
+        </ul>
+      </div>
+      <div>
+        <ul nz-menu nzMode="inline" class="absolute bottom-0">
+          <li nz-menu-item (click)="logout()" class="border-b-2 border-feijoa">
+            <span nz-icon nzType="double-left"></span>
+            <span>Cerrar Sesión</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </nz-sider>
+    <nz-layout class="inner-layout ml-72">
+      <nz-header class="px-12 h-fit flex justify-between header">
+        <div class="flex flex-col items-start gap-1 font-ubuntu justify-center">
+          <div class="flex flex-col gap-1 h-fit">
+            <nz-breadcrumb class="mb-0">
+              <nz-breadcrumb-item>Institución</nz-breadcrumb-item>
+              <nz-breadcrumb-item>Inicio</nz-breadcrumb-item>
+            </nz-breadcrumb>
+            <span class="text-3xl font-ubuntu font-light">Bienvenido de nuevo, <span class="font-bold">Nombre</span></span>
+          </div>
+          <span class="font-NotoSans">Breve descripción sobre lo que se encontrará en esta vista</span>
+        </div>
+        <div class="flex items-center gap-3 text-xl">
+          <span class="font-ubuntu text-base font-light">Lun, 12 de <span class="font-bold">May</span></span>
+          <span nz-icon nzType="message" nzTheme="outline" class="text-feijoa"></span>
+          <span nz-icon nzType="bell" nzTheme="fill" class="text-feijoa"></span>
+        </div>
+      </nz-header>
+      <nz-content class="inner-content w-full h-full">
+        Content
+      </nz-content>
+    </nz-layout>
+  </nz-layout>
+</nz-layout>

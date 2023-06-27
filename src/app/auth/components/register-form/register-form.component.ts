@@ -81,6 +81,7 @@ export class RegisterFormComponent {
       {
         email: this.f['email'].value,
         password: this.f['password'].value,
+        passwordConfirm: this.f['password'].value,
         firstname: this.f['firstname'].value,
         lastname: this.f['lastname'].value,
       }

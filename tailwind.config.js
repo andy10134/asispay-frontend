@@ -132,6 +132,20 @@ module.exports = {
           900: '#000000',
           950: '#000000'
         },
+        'feijoa': {
+          DEFAULT: '#91D888',
+          50: '#FFFFFF',
+          100: '#FFFFFF',
+          200: '#E6F6E4',
+          300: '#CAECC5',
+          400: '#ADE2A7',
+          500: '#91D888',
+          600: '#6ACA5E',
+          700: '#49B53B',
+          800: '#388A2D',
+          900: '#27601F',
+          950: '#1E4B19'
+        },
       },
       fontFamily: { ubuntu: 'ubuntu', NotoSans: 'NotoSans' },
     },

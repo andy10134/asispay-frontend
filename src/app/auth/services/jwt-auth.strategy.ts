@@ -8,7 +8,7 @@ export class JwtAuthStrategy implements AuthStrategy<Token> {
   private readonly JWT_TOKEN = 'JWT_TOKEN';
 
   doLoginUser(token: Token): void {
-    localStorage.setItem(this.JWT_TOKEN, token.jwt);
+    localStorage.setItem(this.JWT_TOKEN, token.token);
   }
 
   doLogoutUser(): void {
@@ -17,8 +17,6 @@ export class JwtAuthStrategy implements AuthStrategy<Token> {
 
   getCurrentUser(): Observable<User | undefined> {
     const token = this.getToken() === 'undefined' ? undefined : this.getToken();
-    console.log(token);
-    console.log(typeof token);
     if (token) {
       const encodedPayload = token.split('.')[1];
       const payload = window.atob(encodedPayload);

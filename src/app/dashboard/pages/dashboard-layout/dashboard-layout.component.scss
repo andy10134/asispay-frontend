@@ -1,0 +1,36 @@
+.logo {
+  width: 120px;
+  height: 31px;
+  margin: 16px 30px 16px 0;
+  float: left;
+}
+
+.header{
+  background-color: #242529;
+}
+
+.nav-header{
+  background-color: #141414;
+}
+
+.inner-content{
+  background-color: #1A1C1E;
+}
+
+.header-menu {
+  line-height: 64px;
+}
+
+.sider-menu {
+  height: 100%;
+  border-right: 0;
+}
+
+nz-breadcrumb {
+  margin: 16px 0;
+}
+
+nz-content {
+  padding: 24px;
+  min-height: 280px;
+}

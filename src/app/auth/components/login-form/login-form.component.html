@@ -1,29 +1,43 @@
-
 <div class="flex flex-col gap-5 h-fit min-w-[20rem]">
   <div class="">
     <h1 class="font-ubuntu font-bold text-3xl">Iniciar sesión</h1>
     <h1 class="font-ubuntu text-xl">en AsisPay</h1>
   </div>
-<form [formGroup]="loginForm">
-  <nz-input-group nzBorderless class="p-3 font-NotoSans text-lg border-venice-blue-500" [nzPrefix]="prefixEmail">
-    <input type="email" nz-input placeholder="Dirección de correo" formControlName="email" />
-    <ng-template #prefixEmail><span nz-icon nzType="mail" class="mr-3"></span></ng-template>
-  </nz-input-group>
-  <br />
-  <br />
-  <nz-input-group nzBorderless class="p-3 font-NotoSans text-lg border-venice-blue-500"
-    [nzPrefix]="prefixPassword">
-    <input type="password" nz-input placeholder="Contraseña" formControlName="password"  />
-    <ng-template #prefixPassword><span nz-icon nzType="lock" class="mr-3"></span></ng-template>
-  </nz-input-group>
-  <br>
-  <br>
-  <button nz-button nzBorderless
-  class="w-full text-left bg-venice-blue-600 font-NotoSans h-12 flex flex-row justify-between items-center"
-  nzType="primary" [disabled]="loginForm.invalid" (click)="login()">Iniciar Sesión <span nz-icon nzType="double-right"></span></button>
-  <br>
-  ¿No tenés usuario? - <a class="text-venice-blue-50" routerLink="../signup">Regístrate acá</a>
-</form>
+  <form [formGroup]="loginForm" nz-form nzLayout="vertical" class="flex flex-col gap-1">
+    <nz-form-item>
+      <nz-form-control [nzErrorTip]="emailErrorTpl">
+        <nz-input-group nzPrefixIcon="mail" class="p-3 font-NotoSans text-lg border-venice-blue-500">
+          <input type="email" formControlName="email" nz-input placeholder="Dirección de correo" class="ml-1" />
+        </nz-input-group>
+        <ng-template #emailErrorTpl let-registerForm>
+          <ng-container *ngIf="registerForm.hasError('email')">La dirección no es válida</ng-container>
+          <ng-container *ngIf="registerForm.hasError('required')">Ingresa una direccion</ng-container>
+          <ng-container *ngIf="registerForm.hasError('confirm') && !registerForm.hasError('email')">Las direcciones no
+            coinciden</ng-container>
+        </ng-template>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control [nzErrorTip]="passwordErrorTpl">
+        <nz-input-group nzPrefixIcon="lock" class="p-3 font-NotoSans text-lg border-venice-blue-500">
+          <input type="password" formControlName="password" nz-input placeholder="Contraseña " class="ml-1" />
+        </nz-input-group>
+        <ng-template #passwordErrorTpl let-registerForm>
+          <ng-container *ngIf="registerForm.hasError('required')">Ingresa una contraseña</ng-container>
+          <ng-container *ngIf="registerForm.hasError('minlength')">Minimo 8 Caracteres <br></ng-container>
+          <ng-container *ngIf="registerForm.hasError('confirm')">Las contraseñas no coinciden</ng-container>
+        </ng-template>
+      </nz-form-control>
+    </nz-form-item>
+
+    <button nz-button nzBorderless
+      class="w-full text-left bg-venice-blue-600 font-NotoSans h-12 flex flex-row justify-between items-center"
+      nzType="primary" [disabled]="loginForm.invalid" (click)="login()">Iniciar Sesión <span nz-icon
+        nzType="double-right"></span></button>
+    <p>
+      ¿No tenés usuario? - <a class="text-venice-blue-50" routerLink="../signup">Regístrate acá</a>
+    </p>
+  </form>
 </div>
 
 <ng-template #notification>
@@ -32,7 +46,7 @@
       <span class="ant-notification-notice-icon">
         <span nz-icon nzType="exclamation-circle" class="text-red-500"></span>
       </span>
-      <div class="ant-notification-notice-message">Revisá tus credenciales</div>
+      <div class="ant-notification-notice-message">Algo salió mal</div>
       <div class="ant-notification-notice-description">
         {{message}}
       </div>
